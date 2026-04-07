@@ -11,14 +11,14 @@ class SimpleNN(nn.Module):
         self.fc2 = nn.Linear(128, 64) # Second hidden layer (input: 128, output: 64)
         self.relu2 = nn.ReLU() # ReLU activation
         self.fc3 = nn.Linear(64, 10) # Output layer (input: 64, output: 10 for classification)
-        self.softmax = nn.Softmax(dim= 1) # Softmax activation for output layer
+        # self.softmax = nn.Softmax(dim= 1) # Softmax activation for output layer
 
     def forward(self, x):
         x = self.flatten(x) # Flatten the input
         x = self.relu1(self.fc1(x)) # First hidden layer with ReLU
         x = self.relu2(self.fc2(x)) # Second hidden layer with ReLU
         x = self.fc3(x) # Output layer
-        x = self.softmax(x) # Apply Softmax to output
+        # x = self.softmax(x) # Apply Softmax to output
         return x
     
 if __name__ == "__main__":
